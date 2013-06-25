@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 setup(
     name = 'TracTicketChainedFields',
     version = '0.1',
-    packages = ['tcf'],
+    packages = find_packages(),
     package_data = { 'tcf': [ '*.txt', 'templates/*.*', 'htdocs/*.*', 'tests/*.*' ] },
     author = "Richard Liao",
     author_email = 'richard.liao.i@gmail.com',
@@ -17,5 +17,7 @@ setup(
         'Framework :: Trac',
     ],
     install_requires = [],
-    entry_points = {'trac.plugins': ['tcf = tcf.web_ui']},
+    entry_points = {'trac.plugins': [
+                        'tcf = tcf.web_ui',
+                        'tcf-admin = tcf.admin']},
 )
